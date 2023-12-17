@@ -40,18 +40,18 @@ class MainActivity : AppCompatActivity() {
     fun update(counter: Int) {
         if (counter == 0) {
             remains.text = "Все места свободны"
-            remains.setTextColor(getResources().getColor(R.color.green))
+            remains.setTextColor(getColor(R.color.green))
             button_minus.isEnabled = false
             buttonReset.isVisible = false
         }
         if (counter in 1..49) {
             remains.text = "Осталось мест: ${50 - counter}"
-            remains.setTextColor(getResources().getColor(R.color.blue))
+            remains.setTextColor(getColor(R.color.blue))
             button_minus.isEnabled = true
             buttonReset.isVisible = false}
         if (counter > 49) {
             remains.text = "Пассажиров слишком много"
-            remains.setTextColor(getResources().getColor(R.color.red))
+            remains.setTextColor(getColor(R.color.red))
             button_minus.isEnabled = true
             buttonReset.isVisible = true
         }
