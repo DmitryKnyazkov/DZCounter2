@@ -31,7 +31,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="какой-то текст" />
+            android:text="Все места свободны"
+            android:textColor="@color/green"/>
 
         <LinearLayout
             android:layout_width="match_parent"

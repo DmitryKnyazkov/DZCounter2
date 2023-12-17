@@ -27,10 +27,8 @@ class MainActivity : AppCompatActivity() {
         button_plus.setOnClickListener { count(1) }
         buttonReset.setOnClickListener {
             counter = 0
-            update(counter)
+            count(0)
         }
-
-
     }
 
     fun count(value: Int) {
@@ -42,15 +40,18 @@ class MainActivity : AppCompatActivity() {
     fun update(counter: Int) {
         if (counter == 0) {
             remains.text = "Все места свободны"
+            remains.setTextColor(getResources().getColor(R.color.green))
             button_minus.isEnabled = false
             buttonReset.isVisible = false
         }
         if (counter in 1..49) {
             remains.text = "Осталось мест: ${50 - counter}"
+            remains.setTextColor(getResources().getColor(R.color.blue))
             button_minus.isEnabled = true
             buttonReset.isVisible = false}
-        else {
+        if (counter > 49) {
             remains.text = "Пассажиров слишком много"
+            remains.setTextColor(getResources().getColor(R.color.red))
             button_minus.isEnabled = true
             buttonReset.isVisible = true
         }
